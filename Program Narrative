@@ -1,0 +1,56 @@
+######2.PROGRAM NARRATIVE.PDF##########
+
+# Program Name: Calculate Employee Pay
+# Author: Daniel Markov
+# Course Name: Python Programming I
+# Date: 2023-10-20
+
+# Constant variable for the overtime rate
+OT_RATE = 1.25
+
+# Input employee's name
+emp_name = input("Enter employee's name: ")
+
+# Input regular hours worked
+reg_hrs = float(input("Enter regular hours worked: "))
+
+# Input overtime hours worked
+ot_hrs = float(input("Enter overtime hours worked: "))
+
+# Input regular hourly pay rate
+reg_pay_rate = float(input("Enter regular hourly pay rate: "))
+
+# Calculate overtime hourly pay rate
+ot_pay_rate = round(reg_pay_rate * OT_RATE, 2)
+
+# Calculate regular pay
+reg_pay = round(reg_hrs * reg_pay_rate, 2)
+
+# Calculate overtime pay
+ot_pay = round(ot_hrs * ot_pay_rate, 2)
+
+# Calculate gross pay
+gross_pay = reg_pay + ot_pay
+
+# Display employee pay information
+print(f"Employee: {emp_name}")
+print(f"Regular Hours Worked: {reg_hrs:,.2f}")
+print(f"Regular Hourly Pay Rate: ${reg_pay_rate:,.2f}")
+print(f"Regular pay: ${reg_pay:,.2f}")
+print()
+print(f"\tOvertime Hours Worked: {ot_hrs:,.2f}")
+print(f"\tOvertime Hourly Pay Rate: ${ot_pay_rate:,.2f}")
+print(f"\tOvertime pay: ${ot_pay:,.2f}")
+print()
+print(f"\tGross pay: ${gross_pay:,.2f}")
+
+# Display message based on gross pay
+if gross_pay > 999.99:
+    print("Over one thousand.")
+elif gross_pay >= 500.00:
+    print("Between five hundred and one thousand.")
+else:
+    print("Under five hundred.")
+
+# Display program finished message
+print("Program finished!")
