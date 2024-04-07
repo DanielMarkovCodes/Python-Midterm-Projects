@@ -1,0 +1,54 @@
+######1.PROGRAM FLOWCHART.PDF##########
+
+# Program Name: Calculate Gross Pay
+# Author: Daniel Markov
+# Course Name: Python Programming I
+# Date: 2023-10-20
+
+# Define a constant variable for the overtime rate
+OT_RATE = 1.25
+
+# Input employee's name
+emp_name = input("Enter employee name: ")
+
+# Input regular hours worked
+reg_hrs = float(input("Enter regular hours worked: "))
+
+# Input overtime hours worked
+ot_hrs = float(input("Enter overtime hours worked: "))
+
+# Input the regular hourly pay rate
+reg_pay_rate = float(input("Enter regular hourly pay rate: "))
+
+# Calculate the overtime hourly pay rate
+ot_pay_rate = reg_pay_rate * OT_RATE
+
+# Calculate regular pay
+reg_pay = round(reg_hrs * reg_pay_rate, 2)
+
+# Calculate overtime pay
+ot_pay = round(ot_hrs * ot_pay_rate, 2)
+
+# Calculate gross pay
+gross_pay = reg_pay + ot_pay
+
+# Display employee name, regular hours worked, regular hourly pay rate, regular pay, overtime hours worked, overtime hourly pay rate, overtime pay, and gross pay
+print("Employee Name:", emp_name)
+print("Regular Hours Worked:", "{:,.2f}".format(reg_hrs))
+print("Regular Hourly Pay Rate:", "${:,.2f}".format(reg_pay_rate))
+print("Regular Pay:", "${:,.2f}".format(reg_pay))
+print("Overtime Hours Worked:", "{:,.2f}".format(ot_hrs))
+print("Overtime Hourly Pay Rate:", "${:,.2f}".format(ot_pay_rate))
+print("Overtime Pay:", "${:,.2f}".format(ot_pay))
+print("Gross Pay:", "${:,.2f}".format(gross_pay))
+
+# Determine the gross pay category
+if gross_pay < 500:
+    print("Under five hundred.")
+elif gross_pay >= 500 and gross_pay < 1000:
+    print("Between five hundred and one thousand.")
+else:
+    print("Over one thousand.")
+
+# Program finished!
+print("Program finished!")
