@@ -1,0 +1,31 @@
+######3.PROGRAM NARRATIVE.TXT##########
+
+import random
+
+gate = "open"
+remember_num = None
+
+while gate == "open":
+    # Simulate rolling two dice
+    die1 = random.randint(1, 6)
+    die2 = random.randint(1, 6)
+    total = die1 + die2
+
+    print(f"die1: {die1}, die2: {die2}, total: {total}")
+
+    if total in (2, 3, 12):
+        print("You lose.")
+        gate = input("Do you want to continue? (Type 'open' to continue or anything else to exit): ")
+    elif total in (7, 11):
+        print("You win!")
+        gate = input("Do you want to continue? (Type 'open' to continue or anything else to exit): ")
+    else:
+        if remember_num is None:
+            remember_num = total
+        else:
+            if total == remember_num:
+                print(f"You matched your remembered number {remember_num}. You win!")
+                gate = input("Do you want to continue? (Type 'open' to continue or anything else to exit): ")
+            elif total == 7:
+                print("You rolled a 7 before matching your remembered number. You lose.")
+                gate = input("Do you want to continue? (Type 'open' to continue or anything else to exit): ")
